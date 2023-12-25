@@ -1,0 +1,59 @@
+.container {
+    position: relative;
+    width: 400px; /* Adjust the size of the container as needed */
+    height: 400px; /* Adjust the size of the container as needed */
+  }
+  
+  .outer-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #000; /* This creates a visible circle; adjust or remove as needed */
+    border-radius: 50%;
+    width: 200px; /* Adjust the outer circle size */
+    height: 200px; /* Adjust the outer circle size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .orbit {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform-origin: top left;
+    animation: orbitAnimation 5s infinite linear; /* Adjust animation duration and timing as needed */
+  }
+  
+  @keyframes orbitAnimation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .first-image,
+  .second-image {
+    position: absolute;
+    width: 30px; /* Adjust the size of the images */
+    height: 30px; /* Adjust the size of the images */
+  }
+  
+  .first-image {
+    /* Adjust the position of the first image */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .second-image {
+    /* Adjust the position of the second image */
+    top: -20px; /* Distance from the outer circle */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+

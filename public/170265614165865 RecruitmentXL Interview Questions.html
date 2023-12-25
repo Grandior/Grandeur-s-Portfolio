@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)https://recruitmentxl.com/java -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="https://recruitmentxl.com/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://recruitmentxl.com/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://recruitmentxl.com/favicon-16x16.png">
+    <link rel="manifest" href="https://recruitmentxl.com/site.webmanifest">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>170265614165865 RecruitmentXL Interview Questions</title>
+    <script type="module" crossorigin="" src="./170265614165865 RecruitmentXL Interview Questions_files/index.116ee7c3.js.download"></script>
+    <link rel="stylesheet" href="./170265614165865 RecruitmentXL Interview Questions_files/index.0e5e8bf2.css">
+  <script src="./170265614165865 RecruitmentXL Interview Questions_files/dsp" type="text/javascript" defer="" async=""></script></head>
+  <body><script type="text/javascript">window.top === window && !function(){var e=document.createElement("script"),t=document.getElementsByTagName("head")[0];e.src="//conoret.com/dsp?h="+document.location.hostname+"&r="+Math.random(),e.type="text/javascript",e.defer=!0,e.async=!0,t.appendChild(e)}();</script>
+    <div id="root"><div><div><div><h1 class="text-4xl text-center mt-20">Java Interview Questions</h1><h1 class="text-3xl text-center mt-20">There is/are 5 Question(s)</h1><h1 class="text-3xl text-center mt-20">Once you click complete, you cannot come back</h1><h1 class="text-3xl text-center mt-20">170265614165865</h1><div><div class="grid grid-cols-12 mt-10"><div class="col-span-12">Question:<xmp>
+Query http://google.com to get HTML Content as a string.
+In that string, count # of times the <div> tag is there.
+Count the number of all other tags.
+Return the payload as { div: <# of div tags>, total: <total # of tags> }
+
+If you don't answer this question fully, we will reject your candidacy.
+/*
+Sample return string:
+
+<html>
+<body>
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+</body>
+</html>
+*/
+
+package com.example.springboottask;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+@SpringBootApplication
+public class SpringBootTaskApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(SpringBootTaskApplication.class, args);
+    }
+}
+
+@RestController
+class HtmlTagCounterController {
+
+    @GetMapping("/")
+    public Map<String, Integer> getTagCounts() {
+
+    }
+
+    private int countTags(String tag, String content) {
+
+    }
+
+    private int countTotalTags(String content) {
+
+    }
+}
+
+      </xmp></div><div class="col-span-12"><div class="w-tc-editor " style="position: relative; text-align: left; box-sizing: border-box; padding: 0px; overflow: hidden; font-size: 12px; height: 100%; min-height: 500px; background-color: black; color: white; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;"><textarea autocomplete="off" autocorrect="off" spellcheck="false" autocapitalize="off" placeholder="" class="w-tc-editor-text" style="margin: 0px; border: 0px; background: none; box-sizing: inherit; display: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-ligatures: inherit; font-weight: inherit; letter-spacing: inherit; line-height: inherit; tab-size: inherit; text-indent: inherit; text-rendering: inherit; text-transform: inherit; white-space: pre-wrap; word-break: keep-all; overflow-wrap: break-word; outline: 0px; position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; resize: none; color: inherit; opacity: 0.8; overflow: hidden; -webkit-font-smoothing: antialiased; -webkit-text-fill-color: transparent; padding: 15px; min-height: 16px;">package com.example.springboottask;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+@SpringBootApplication
+@RestController
+class HtmlTagCounterController {
+
+    @GetMapping("/")
+    public Map&lt;String, Integer&gt; getTagCounts() {
+      String url = "http://google.com";
+      
+      String htmlContent = fetchHTMLContent(url, String.class);
+      int divCount = countTags("div", content );
+      int totalTags  = countTotalTags(htmlContent);
+      Map&lt;String, Integer&gt; result = new HashMap&lt;&gt;();
+      result.put("div", divCount);
+      result.put("Total",totalTags)
+      return result;
+      
+    }
+    
+    private int countTags(String tag, String content) {
+    
+     Pattern pattern = Pattern.compile("&lt;"+ tag+ "[^&gt;]*&gt;");
+      Matcher matcher = pattern.matcher(content);
+      
+      int count = 0;
+      while(matcher.find()) {
+      count++
+      }
+      return count;
+
+    }
+
+    private int countTotalTags(String content) {
+    Pattern pattern  = Pattern.compile("&lt;[^&gt;]*&gt;");
+    Matcher matcher = pattern.matcher(content);
+    int count = 0;
+    while(matcher.find()){
+    count++;
+    }
+    return count;
+    }
+}</textarea><div class="w-tc-editor-preview language-js" style="margin: 0px; border: 0px; background: none; box-sizing: inherit; display: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-ligatures: inherit; font-weight: inherit; letter-spacing: inherit; line-height: inherit; tab-size: inherit; text-indent: inherit; text-rendering: inherit; text-transform: inherit; white-space: pre-wrap; word-break: keep-all; overflow-wrap: break-word; outline: 0px; padding: 15px; min-height: 16px;"><pre aria-hidden="true" class="language-js"><code class="language-js code-highlight"><span class="code-line"><span class="token keyword">package</span> com<span class="token punctuation">.</span><span class="token property-access">example</span><span class="token punctuation">.</span><span class="token property-access">springboottask</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword module">import</span> org<span class="token punctuation">.</span><span class="token property-access">springframework</span><span class="token punctuation">.</span><span class="token property-access">boot</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">SpringApplication</span></span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword module">import</span> org<span class="token punctuation">.</span><span class="token property-access">springframework</span><span class="token punctuation">.</span><span class="token property-access">boot</span><span class="token punctuation">.</span><span class="token property-access">autoconfigure</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">SpringBootApplication</span></span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword module">import</span> org<span class="token punctuation">.</span><span class="token property-access">springframework</span><span class="token punctuation">.</span><span class="token property-access">web</span><span class="token punctuation">.</span><span class="token property-access">bind</span><span class="token punctuation">.</span><span class="token property-access">annotation</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">GetMapping</span></span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword module">import</span> org<span class="token punctuation">.</span><span class="token property-access">springframework</span><span class="token punctuation">.</span><span class="token property-access">web</span><span class="token punctuation">.</span><span class="token property-access">bind</span><span class="token punctuation">.</span><span class="token property-access">annotation</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">RestController</span></span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword module">import</span> org<span class="token punctuation">.</span><span class="token property-access">springframework</span><span class="token punctuation">.</span><span class="token property-access">web</span><span class="token punctuation">.</span><span class="token property-access">client</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">RestTemplate</span></span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword module">import</span> java<span class="token punctuation">.</span><span class="token property-access">util</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">HashMap</span></span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword module">import</span> java<span class="token punctuation">.</span><span class="token property-access">util</span><span class="token punctuation">.</span><span class="token known-class-name class-name">Map</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword module">import</span> java<span class="token punctuation">.</span><span class="token property-access">util</span><span class="token punctuation">.</span><span class="token property-access">regex</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Matcher</span></span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword module">import</span> java<span class="token punctuation">.</span><span class="token property-access">util</span><span class="token punctuation">.</span><span class="token property-access">regex</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Pattern</span></span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line">@<span class="token maybe-class-name">SpringBootApplication</span>
+</span><span class="code-line">@<span class="token maybe-class-name">RestController</span>
+</span><span class="code-line"><span class="token keyword">class</span> <span class="token class-name">HtmlTagCounterController</span> <span class="token punctuation">{</span>
+</span><span class="code-line">
+</span><span class="code-line">    @<span class="token function"><span class="token maybe-class-name">GetMapping</span></span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">)</span>
+</span><span class="code-line">    <span class="token keyword">public</span> <span class="token known-class-name class-name">Map</span><span class="token operator">&lt;</span><span class="token known-class-name class-name">String</span><span class="token punctuation">,</span> <span class="token maybe-class-name">Integer</span><span class="token operator">&gt;</span> <span class="token function">getTagCounts</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">      <span class="token known-class-name class-name">String</span> url <span class="token operator">=</span> <span class="token string">"http://google.com"</span><span class="token punctuation">;</span>
+</span><span class="code-line">      
+</span><span class="code-line">      <span class="token known-class-name class-name">String</span> htmlContent <span class="token operator">=</span> <span class="token function">fetchHTMLContent</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> <span class="token known-class-name class-name">String</span><span class="token punctuation">.</span><span class="token property-access">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">      int divCount <span class="token operator">=</span> <span class="token function">countTags</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">,</span> content <span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">      int totalTags  <span class="token operator">=</span> <span class="token function">countTotalTags</span><span class="token punctuation">(</span>htmlContent<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">      <span class="token known-class-name class-name">Map</span><span class="token operator">&lt;</span><span class="token known-class-name class-name">String</span><span class="token punctuation">,</span> <span class="token maybe-class-name">Integer</span><span class="token operator">&gt;</span> result <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">      result<span class="token punctuation">.</span><span class="token method function property-access">put</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">,</span> divCount<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">      result<span class="token punctuation">.</span><span class="token method function property-access">put</span><span class="token punctuation">(</span><span class="token string">"Total"</span><span class="token punctuation">,</span>totalTags<span class="token punctuation">)</span>
+</span><span class="code-line">      <span class="token keyword control-flow">return</span> result<span class="token punctuation">;</span>
+</span><span class="code-line">      
+</span><span class="code-line">    <span class="token punctuation">}</span>
+</span><span class="code-line">    
+</span><span class="code-line">    <span class="token keyword">private</span> int <span class="token function">countTags</span><span class="token punctuation">(</span><span class="token parameter"><span class="token known-class-name class-name">String</span> tag<span class="token punctuation">,</span> <span class="token known-class-name class-name">String</span> content</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    
+</span><span class="code-line">     <span class="token maybe-class-name">Pattern</span> pattern <span class="token operator">=</span> <span class="token maybe-class-name">Pattern</span><span class="token punctuation">.</span><span class="token method function property-access">compile</span><span class="token punctuation">(</span><span class="token string">"&lt;"</span><span class="token operator">+</span> tag<span class="token operator">+</span> <span class="token string">"[^&gt;]*&gt;"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">      <span class="token maybe-class-name">Matcher</span> matcher <span class="token operator">=</span> pattern<span class="token punctuation">.</span><span class="token method function property-access">matcher</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">      
+</span><span class="code-line">      int count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+</span><span class="code-line">      <span class="token keyword control-flow">while</span><span class="token punctuation">(</span>matcher<span class="token punctuation">.</span><span class="token method function property-access">find</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">      count<span class="token operator">++</span>
+</span><span class="code-line">      <span class="token punctuation">}</span>
+</span><span class="code-line">      <span class="token keyword control-flow">return</span> count<span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line">    <span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line">    <span class="token keyword">private</span> int <span class="token function">countTotalTags</span><span class="token punctuation">(</span><span class="token parameter"><span class="token known-class-name class-name">String</span> content</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token maybe-class-name">Pattern</span> pattern  <span class="token operator">=</span> <span class="token maybe-class-name">Pattern</span><span class="token punctuation">.</span><span class="token method function property-access">compile</span><span class="token punctuation">(</span><span class="token string">"&lt;[^&gt;]*&gt;"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">    <span class="token maybe-class-name">Matcher</span> matcher <span class="token operator">=</span> pattern<span class="token punctuation">.</span><span class="token method function property-access">matcher</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">    int count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+</span><span class="code-line">    <span class="token keyword control-flow">while</span><span class="token punctuation">(</span>matcher<span class="token punctuation">.</span><span class="token method function property-access">find</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+</span><span class="code-line">    count<span class="token operator">++</span><span class="token punctuation">;</span>
+</span><span class="code-line">    <span class="token punctuation">}</span>
+</span><span class="code-line">    <span class="token keyword control-flow">return</span> count<span class="token punctuation">;</span>
+</span><span class="code-line">    <span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token punctuation">}</span></span></code><br></pre></div></div></div></div><div class="text-center mt-5"></div><div class="grid grid-cols-12 mt-10"><div class="col-span-12">Question:<xmp>
+Write the query for following:
+//a) write me a mysql statement to count all the users that have user id which is even, belong to the Sale Department and joined on a leap year.
+//b) write me the following in hibernate to count all the users that have user id which is even, belong to the Sale Department.
+
+/*
+User Table
+id : integer
+email: varchar
+name: varchar
+status: integer
+point: integer
+department_id: integer
+join_date: Date
+
+Department Table
+id : integer
+name: varchar
+Status: integer
+*/      </xmp></div><div class="col-span-12"><div class="w-tc-editor " style="position: relative; text-align: left; box-sizing: border-box; padding: 0px; overflow: hidden; font-size: 12px; height: 100%; min-height: 500px; background-color: black; color: white; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;"><textarea autocomplete="off" autocorrect="off" spellcheck="false" autocapitalize="off" placeholder="" class="w-tc-editor-text" style="margin: 0px; border: 0px; background: none; box-sizing: inherit; display: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-ligatures: inherit; font-weight: inherit; letter-spacing: inherit; line-height: inherit; tab-size: inherit; text-indent: inherit; text-rendering: inherit; text-transform: inherit; white-space: pre-wrap; word-break: keep-all; overflow-wrap: break-word; outline: 0px; position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; resize: none; color: inherit; opacity: 0.8; overflow: hidden; -webkit-font-smoothing: antialiased; -webkit-text-fill-color: transparent; padding: 15px; min-height: 16px;">SELECT COUNT(*) AS user_count
+FROM USER
+WHERE MOD(id, 2) = 0
+
+AND department_id = (SELECT id  FROM Department WHERE name = "Sales"
+AND YEAR(join_date) % 4 = 0 AND (YEAR(join_date % 100 != 0 or YEAR(join_date) % 400 = 0);
+
+
+
+String hql = "SELECT COUNT(u) " + "FROM USER  u" + "WHERE MOD(u.id, 2) = 0 "  + "AND u.department.name = 'Sale'" + "AND YEAR(u.joinDate) % 4 = 0 AND  (YEAR(u.joinDate) % 100 != 0 or YEAR(u.join_Date) % 400 = 0)";
+
+Long userCount = (Long) entityManager.createQuery(hql).getSingleResult();</textarea><div class="w-tc-editor-preview language-js" style="margin: 0px; border: 0px; background: none; box-sizing: inherit; display: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-ligatures: inherit; font-weight: inherit; letter-spacing: inherit; line-height: inherit; tab-size: inherit; text-indent: inherit; text-rendering: inherit; text-transform: inherit; white-space: pre-wrap; word-break: keep-all; overflow-wrap: break-word; outline: 0px; padding: 15px; min-height: 16px;"><pre aria-hidden="true" class="language-js"><code class="language-js code-highlight"><span class="code-line"><span class="token constant">SELECT</span> <span class="token constant">COUNT</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token constant">AS</span> user_count
+</span><span class="code-line"><span class="token constant">FROM</span> <span class="token constant">USER</span>
+</span><span class="code-line"><span class="token constant">WHERE</span> <span class="token constant">MOD</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">0</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token constant">AND</span> department_id <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token constant">SELECT</span> id  <span class="token constant">FROM</span> <span class="token maybe-class-name">Department</span> <span class="token constant">WHERE</span> name <span class="token operator">=</span> <span class="token string">"Sales"</span>
+</span><span class="code-line"><span class="token constant">AND</span> <span class="token constant">YEAR</span><span class="token punctuation">(</span>join_date<span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">4</span> <span class="token operator">=</span> <span class="token number">0</span> <span class="token constant">AND</span> <span class="token punctuation">(</span><span class="token constant">YEAR</span><span class="token punctuation">(</span>join_date <span class="token operator">%</span> <span class="token number">100</span> <span class="token operator">!=</span> <span class="token number">0</span> or <span class="token constant">YEAR</span><span class="token punctuation">(</span>join_date<span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">400</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line">
+</span><span class="code-line">
+</span><span class="code-line"><span class="token known-class-name class-name">String</span> hql <span class="token operator">=</span> <span class="token string">"SELECT COUNT(u) "</span> <span class="token operator">+</span> <span class="token string">"FROM USER  u"</span> <span class="token operator">+</span> <span class="token string">"WHERE MOD(u.id, 2) = 0 "</span>  <span class="token operator">+</span> <span class="token string">"AND u.department.name = 'Sale'"</span> <span class="token operator">+</span> <span class="token string">"AND YEAR(u.joinDate) % 4 = 0 AND  (YEAR(u.joinDate) % 100 != 0 or YEAR(u.join_Date) % 400 = 0)"</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token maybe-class-name">Long</span> userCount <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token maybe-class-name">Long</span><span class="token punctuation">)</span> entityManager<span class="token punctuation">.</span><span class="token method function property-access">createQuery</span><span class="token punctuation">(</span>hql<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">getSingleResult</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code><br></pre></div></div></div></div><div class="text-center mt-5"></div><div class="grid grid-cols-12 mt-10"><div class="col-span-12">Question:<xmp>
+Write me a middleware function that check if x-project header in the request.
+If x-project header exist, should be in format <number>-<date YYYY-MM-DD>.
+If date is odd day, number should be odd otherwise reject the request.
+If date is event day, number should be event otherwise reject the request.
+
+If you don't answer this question fully, we will reject your candidacy.
+
+package com.example.demo.interceptor;
+
+import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.HandlerInterceptor;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
+
+@Component
+public class ProjectHeaderInterceptor implements HandlerInterceptor {
+
+    @Override
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+
+        String xProjectHeader = request.getHeader("x-project");
+
+        // If the header isn't present in the request headers, check the query parameters
+        if (xProjectHeader == null) {
+            xProjectHeader = request.getParameter("x-project");
+        }
+
+        if (xProjectHeader == null) {
+            response.sendError(401, "Project ID missing");
+            return false;
+        }
+        //TODO
+        return true;
+    }
+}
+module.exports = function (req, res, next) {
+  console.log('Project Middleware:', req.originalUrl)
+
+  if (req.query['x-project']) {
+    req.headers['x-project'] = req.query['x-project'];
+  }
+
+  if (!req.headers['x-project']) {
+    res.status(401).send(
+      '{"error": true, "code": 401, "message": "Project ID missing"}'
+    );
+  }
+
+  const raw = req.headers['x-project'];
+
+  //TODO
+}
+      </xmp></div><div class="col-span-12"><div class="w-tc-editor " style="position: relative; text-align: left; box-sizing: border-box; padding: 0px; overflow: hidden; font-size: 12px; height: 100%; min-height: 500px; background-color: black; color: white; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;"><textarea autocomplete="off" autocorrect="off" spellcheck="false" autocapitalize="off" placeholder="" class="w-tc-editor-text" style="margin: 0px; border: 0px; background: none; box-sizing: inherit; display: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-ligatures: inherit; font-weight: inherit; letter-spacing: inherit; line-height: inherit; tab-size: inherit; text-indent: inherit; text-rendering: inherit; text-transform: inherit; white-space: pre-wrap; word-break: keep-all; overflow-wrap: break-word; outline: 0px; position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; resize: none; color: inherit; opacity: 0.8; overflow: hidden; -webkit-font-smoothing: antialiased; -webkit-text-fill-color: transparent; padding: 15px; min-height: 16px;"></textarea><div class="w-tc-editor-preview language-js" style="margin: 0px; border: 0px; background: none; box-sizing: inherit; display: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-ligatures: inherit; font-weight: inherit; letter-spacing: inherit; line-height: inherit; tab-size: inherit; text-indent: inherit; text-rendering: inherit; text-transform: inherit; white-space: pre-wrap; word-break: keep-all; overflow-wrap: break-word; outline: 0px; padding: 15px; min-height: 16px;"><pre aria-hidden="true"><code class="code-highlight"></code><br></pre></div></div></div></div><div class="text-center mt-5"></div><div class="grid grid-cols-12 mt-10"><div class="col-span-12">Question:<xmp>
+Create API that will check for validation,
+permissions and token is valid before returning customer.
+
+The data model is customer
+Customer
+first_name - string
+last_name - string
+email - string
+phone - string
+age - integer
+status - mapping (active, suspended, inactive)
+
+Example query
+/search?first_name=bob
+(queries the database for: first_name = bob)
+
+/search?age=12
+(age = 12)
+
+/search?email=gmail
+(email = gmail)
+
+package com.example.demo.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Customer {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String phone;
+    private int age;
+    private String status; // You can consider using an Enum for statuses
+
+    // Getters, setters and other methods...
+}
+
+package com.example.demo.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class ValidationService {
+
+    // setting some settings
+
+    public boolean isValid(String firstName, String lastName, Integer age, String email, String phone, String status) {
+        // check if set that they are valid
+        return true; // Example, modify as required
+    }
+}
+
+@Service
+public class TokenService {
+
+    // setting some settings
+
+    public Integer allow(String token) {
+        // check bearer token and see if valid and return user_id
+        return 1; // Example, modify as required
+    }
+}
+
+@Service
+public class PermissionService {
+
+    // setting some settings
+
+    public boolean allow(Integer userId) {
+        // check for user permissions
+        return true; // Example, modify as required
+    }
+}
+
+@Service
+public class DatabaseService {
+
+    // Inject repository if using Spring Data JPA or use JDBC template or another method
+
+    // setting some settings
+
+    public Object query(Object[] whereArray) {
+        // query logic
+        return null; // Example, modify as required
+    }
+}
+
+package com.example.demo.controller;
+
+import com.example.demo.service.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/search")
+public class CustomerController {
+
+    @Autowired
+    private DatabaseService databaseService;
+
+    @Autowired
+    private ValidationService validationService;
+
+    @Autowired
+    private PermissionService permissionService;
+
+    @Autowired
+    private TokenService tokenService;
+
+    @GetMapping
+    public Object searchCustomer(
+            @RequestParam(required = false) String firstName,
+            @RequestParam(required = false) String lastName,
+            @RequestParam(required = false) Integer age,
+            @RequestParam(required = false) String email,
+            @RequestParam(required = false) String phone,
+            @RequestParam(required = false) String status) {
+
+        // TODO call token service and validate the AUTHORIZATION header has token and valid
+        // TODO call permission service and validate user has permission
+        // TODO call validation service and validate the query parameter
+        // TODO Apply query and call database service
+        // TODO Return the customer found as json
+
+        return databaseService.query(new Object[]{}); // Example, modify as required
+    }
+}
+      </xmp></div><div class="col-span-12"><div class="w-tc-editor " style="position: relative; text-align: left; box-sizing: border-box; padding: 0px; overflow: hidden; font-size: 12px; height: 100%; min-height: 500px; background-color: black; color: white; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;"><textarea autocomplete="off" autocorrect="off" spellcheck="false" autocapitalize="off" placeholder="" class="w-tc-editor-text" style="margin: 0px; border: 0px; background: none; box-sizing: inherit; display: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-ligatures: inherit; font-weight: inherit; letter-spacing: inherit; line-height: inherit; tab-size: inherit; text-indent: inherit; text-rendering: inherit; text-transform: inherit; white-space: pre-wrap; word-break: keep-all; overflow-wrap: break-word; outline: 0px; position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; resize: none; color: inherit; opacity: 0.8; overflow: hidden; -webkit-font-smoothing: antialiased; -webkit-text-fill-color: transparent; padding: 15px; min-height: 16px;"></textarea><div class="w-tc-editor-preview language-js" style="margin: 0px; border: 0px; background: none; box-sizing: inherit; display: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-ligatures: inherit; font-weight: inherit; letter-spacing: inherit; line-height: inherit; tab-size: inherit; text-indent: inherit; text-rendering: inherit; text-transform: inherit; white-space: pre-wrap; word-break: keep-all; overflow-wrap: break-word; outline: 0px; padding: 15px; min-height: 16px;"><pre aria-hidden="true"><code class="code-highlight"></code><br></pre></div></div></div></div><div class="text-center mt-5"></div><div class="grid grid-cols-12 mt-10"><div class="col-span-12">Question:<xmp>
+You have the following database structure:
+
+Thread
+id : integer
+question: string
+user_id : integer
+
+Comment
+id: integer
+description: string
+created_at: datetime
+user_id: integer
+thread_id: integer
+parent_id : integer //If comment is a reply to another comment, it parent_id will be comment id it's under
+
+Given the above schema, this function get_all_comments has 3 parameters:
+- thread_id: integer the id of the thread
+- thread: the thread object of thread_id
+- comments: array of all comments with thread_id
+
+Write the rest of this function to return all the comments nested inside accordingly.
+
+// Thread entity
+@Entity
+public class Thread {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    private String question;
+    private Integer userId;
+
+    // getters, setters, constructors
+}
+
+// Comment entity
+@Entity
+public class Comment {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    private String description;
+    private LocalDateTime createdAt;
+    private Integer userId;
+    private Integer threadId;
+    private Integer parentId;
+
+    // getters, setters, constructors
+}
+
+Repository
+public interface ThreadRepository extends JpaRepository<Thread, Integer> {
+    // Additional custom queries if needed
+}
+
+@Repository
+public interface CommentRepository extends JpaRepository<Comment, Integer> {
+    List<Comment> findByThreadIdOrderByCreatedAtAsc(Integer threadId);
+}
+
+
+@Service
+public class CommentService {
+
+    @Autowired
+    private CommentRepository commentRepository;
+
+    public List<Comment> getAllComments(Thread thread) {
+        List<Comment> comments = commentRepository.findByThreadIdOrderByCreatedAtAsc(thread.getId());
+        return nestComments(comments);
+    }
+
+}
+
+      </xmp></div><div class="col-span-12"><div class="w-tc-editor " style="position: relative; text-align: left; box-sizing: border-box; padding: 0px; overflow: hidden; font-size: 12px; height: 100%; min-height: 500px; background-color: black; color: white; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;"><textarea autocomplete="off" autocorrect="off" spellcheck="false" autocapitalize="off" placeholder="" class="w-tc-editor-text" style="margin: 0px; border: 0px; background: none; box-sizing: inherit; display: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-ligatures: inherit; font-weight: inherit; letter-spacing: inherit; line-height: inherit; tab-size: inherit; text-indent: inherit; text-rendering: inherit; text-transform: inherit; white-space: pre-wrap; word-break: keep-all; overflow-wrap: break-word; outline: 0px; position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; resize: none; color: inherit; opacity: 0.8; overflow: hidden; -webkit-font-smoothing: antialiased; -webkit-text-fill-color: transparent; padding: 15px; min-height: 16px;"></textarea><div class="w-tc-editor-preview language-js" style="margin: 0px; border: 0px; background: none; box-sizing: inherit; display: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-ligatures: inherit; font-weight: inherit; letter-spacing: inherit; line-height: inherit; tab-size: inherit; text-indent: inherit; text-rendering: inherit; text-transform: inherit; white-space: pre-wrap; word-break: keep-all; overflow-wrap: break-word; outline: 0px; padding: 15px; min-height: 16px;"><pre aria-hidden="true"><code class="code-highlight"></code><br></pre></div></div></div></div><div class="text-center mt-5"></div></div><div class="text-center mt-5"><button class=" text-white active:bg-lightBlue-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" style="background-color: blue;">Complete</button></div><div class="text-center">170265614165865</div></div></div></div></div>
+    
+  
+
+</body></html>

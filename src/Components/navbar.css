@@ -1,0 +1,30 @@
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: 'Oswald', sans-serif;
+    background-color: rgba(240, 156, 22, 0.842);
+    color: white;
+    font-size: 20px;
+    padding-top: 20px;
+    padding-left: 45px;
+    /* border-radius: 2px; */
+    /* position: fixed; */
+    /* box-shadow: rgb(0, 0, 0); */
+    /* position: relative; */
+    /* width: 100%; */
+}
+
+.part-2{
+    display: flex;
+    gap: 80px;
+    padding-right: 45px;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar{
+        /* overflow: hidden; */
+        font-size: 10px;
+        padding-top: 10px;
+    }
+  }

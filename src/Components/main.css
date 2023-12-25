@@ -1,0 +1,116 @@
+.container {
+    position: relative;
+    display: block;
+    justify-content: center;
+    /* display: flex; */
+
+
+
+    /* left: 190px; */
+    padding-top: 100px;
+    /* left: 200px; */
+    width: 100%; /* Adjust this to fit your layout */
+    height: 100%; /* Adjust this to fit your layout */
+  }
+  
+  .static-image {
+    /* position: absolute; */
+    top: 0;
+    /* left: 100px; */
+    /* Adjust width, height, and other properties as needed */
+  }
+  
+  .text-animation {
+    position: absolute;
+    left: 390px;
+    bottom: 400px;
+    /* font-family: 'Oswald', sans-serif; */
+    font-family: 'Poppins', sans-serif;
+    /* font-weight: 5000; */
+    color: black;
+    /* font-size: 20px; */
+    
+    /* top: 50%; Adjust position as needed */
+    /* left: 50%; Adjust position as needed */
+    /* transform: translate(-50%, -50%); */
+    /* Apply your typeanimation or text styles here */
+  }
+  
+  .logos > img{
+    width: 30px;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .stack{
+    /* box-sizing: border-box; */
+    /* width: 80px; */
+    /* height: auto; */
+    /* background-color: black; */
+    position: relative;
+    top: -35px;
+    padding-left: 80px;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: ; */
+  }
+
+  .socials > img{
+    width: 30px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    cursor: pointer;
+  }
+
+  .socials{
+    position: sticky;
+    bottom: 300px;
+    /* position: ; */
+    left: 100%;
+    /* background-color: red; */
+    border: 2px black;
+    height: auto;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .static-image{
+      width: 100px;
+      left: 7px;
+      position: relative;
+    }
+
+    .type-animation{
+      font-size: 12px;
+      position: absolute;
+      left: -270px;
+      top: 0px;
+      /* font-family: 'Oswald', sans-serif; */
+      font-family: 'Poppins', sans-serif;
+      /* font-weight: ; */
+      color: black;
+      
+    }
+
+    .stack{
+      position: relative;
+      top: -15px;
+      padding-left: 0px;
+      display: flex;
+      flex-direction: row;
+      
+    }
+
+    .logos > img{
+      width: 10px;
+      padding: 10px;
+      cursor: pointer;
+    }
+    
+  }

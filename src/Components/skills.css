@@ -1,0 +1,151 @@
+.skills{
+    /* position: absolute; */
+    /* display: block; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* left: 40%; */
+    /* bottom: 0px; */
+    /* bottom: -400px; */
+    /* display: flex; */
+}
+
+.skills-container{
+    /* font-family: 'Oswald', sans-serif; */
+}
+
+.skills-h1{
+    text-align: center;
+    letter-spacing: 5px;
+}
+
+.technical-font {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 15px;
+}
+
+.brackets{
+    width: 20px;
+    position: relative;
+    top: 45px;
+    right: 30px;
+}
+
+.frontend-brackets {
+    font-size: 20px;
+
+}
+
+/* .frontend-dev{
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    left: 20px;
+} */
+
+.video{
+    width: 20px;
+}
+
+/* .video-editing{
+    display: flex;
+} */
+
+.cut-screen{
+    width: 25px;
+    position: relative;
+    top: 45px;
+    right: 42px;
+}
+
+/* .edit-text{
+    position: relative;
+    bottom: 5px;
+    right: 1.5px;
+} */
+.developer-container{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.dev-tools{
+    display: inline-block;
+    justify-content: center;
+    margin-left: 548px;
+}
+
+.developer-png{
+    width: 30px;
+}
+
+.editor-container{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.editor-tools{
+    display: inline-block;
+    justify-content: center;
+    margin-left: 548px;
+}
+
+.editor-png{
+    width: 30px;
+}
+
+.up-arrow{
+    width: 20px;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .skills-h1{
+        text-align: center;
+        /* letter-spacing: 5px; */
+    }
+    
+    .technical-font {
+        font-family: 'Poppins', sans-serif;
+        text-align: center;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 10px;
+    }
+    
+    .brackets{
+        width: 10px;
+        position: relative;
+        top: 45px;
+        right: 30px;
+    }
+
+    .developer-png{
+        max-width: 20px;
+    }
+    
+    .frontend-brackets {
+        font-size: 15px;
+    
+    }
+
+    .dev-tools{
+        display: inline-block;
+        justify-content: center;
+        margin-left: 10px;
+    }
+
+    .html-progress{
+        width: 200px;
+    }
+
+    .up-arrow{
+        width: 20px;
+    }
+
+}
